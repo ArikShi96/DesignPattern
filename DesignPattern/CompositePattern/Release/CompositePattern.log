@@ -1,0 +1,12 @@
+﻿  directory.cpp
+directory.cpp(11): warning C4018: “<”: 有符号/无符号不匹配
+directory.cpp(21): warning C4018: “<”: 有符号/无符号不匹配
+  file.cpp
+  main.cpp
+  正在生成代码
+  12 of 177 functions ( 6.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    4 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  CompositePattern.vcxproj -> C:\Users\施峰\documents\visual studio 2015\Projects\POJ\Release\CompositePattern.exe
+  CompositePattern.vcxproj -> C:\Users\施峰\documents\visual studio 2015\Projects\POJ\Release\CompositePattern.pdb (Full PDB)

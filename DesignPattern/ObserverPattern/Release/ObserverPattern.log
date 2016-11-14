@@ -1,0 +1,9 @@
+﻿  main.cpp
+  weatherData.cpp
+weatherData.cpp(15): warning C4018: “<”: 有符号/无符号不匹配
+  weatherObserver.cpp
+  正在生成代码
+  All 112 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  ObserverPattern.vcxproj -> C:\Users\施峰\documents\visual studio 2015\Projects\POJ\Release\ObserverPattern.exe
+  ObserverPattern.vcxproj -> C:\Users\施峰\documents\visual studio 2015\Projects\POJ\Release\ObserverPattern.pdb (Full PDB)
