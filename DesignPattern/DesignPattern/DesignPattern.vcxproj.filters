@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\model">
+      <UniqueIdentifier>{e2a4f0b5-9d5d-4a91-a866-c5a0f4f5c69a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\command">
+      <UniqueIdentifier>{a37b27a4-f32a-4811-b605-f6e6d2fb2783}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\main">
+      <UniqueIdentifier>{32008260-e617-4d96-b066-10cf4205d4ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\model">
+      <UniqueIdentifier>{f47c6c24-93f5-4d74-9321-3c4c2bf9c306}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\observer">
+      <UniqueIdentifier>{56097889-0a0f-40d9-9994-2aff9af293af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\command">
+      <UniqueIdentifier>{b2c1c0a9-c052-4b9f-a04d-de71665c312f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件\main</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem.cpp">
+      <Filter>源文件\model</Filter>
+    </ClCompile>
+    <ClCompile Include="CompoundEdit.cpp">
+      <Filter>源文件\command</Filter>
+    </ClCompile>
+    <ClCompile Include="UndoManager.cpp">
+      <Filter>源文件\command</Filter>
+    </ClCompile>
+    <ClCompile Include="file.cpp">
+      <Filter>源文件\model</Filter>
+    </ClCompile>
+    <ClCompile Include="directory.cpp">
+      <Filter>源文件\model</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FileSystem.h">
+      <Filter>头文件\model</Filter>
+    </ClInclude>
+    <ClInclude Include="CompoundEdit.h">
+      <Filter>头文件\command</Filter>
+    </ClInclude>
+    <ClInclude Include="UndoableEdit.h">
+      <Filter>头文件\command</Filter>
+    </ClInclude>
+    <ClInclude Include="UndoableEditEvent.h">
+      <Filter>头文件\command</Filter>
+    </ClInclude>
+    <ClInclude Include="UndoableEditListener.h">
+      <Filter>头文件\command</Filter>
+    </ClInclude>
+    <ClInclude Include="UndoableEditSupport.h">
+      <Filter>头文件\command</Filter>
+    </ClInclude>
+    <ClInclude Include="UndoManager.h">
+      <Filter>头文件\command</Filter>
+    </ClInclude>
+    <ClInclude Include="directory.h">
+      <Filter>头文件\model</Filter>
+    </ClInclude>
+    <ClInclude Include="Entry.h">
+      <Filter>头文件\model</Filter>
+    </ClInclude>
+    <ClInclude Include="file.h">
+      <Filter>头文件\model</Filter>
+    </ClInclude>
+    <ClInclude Include="Iobservable.h">
+      <Filter>头文件\observer</Filter>
+    </ClInclude>
+    <ClInclude Include="Iobserver.h">
+      <Filter>头文件\observer</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
