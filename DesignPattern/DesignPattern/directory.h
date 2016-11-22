@@ -13,7 +13,7 @@ public:
 		name = _name;
 	}
 	string getName();
-	int getSize();
+	double getSize();
 	void add(entry* en);
 	void printList();
 };

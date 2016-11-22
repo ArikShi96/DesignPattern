@@ -5,7 +5,7 @@
 using namespace std;
 
 class CompoundEdit :UndoableEdit {
-private:
+protected:
 	bool inProgress;
 	bool hasBeenDone = true;
 	bool alive = true;

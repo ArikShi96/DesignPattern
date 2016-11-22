@@ -41,6 +41,7 @@ UndoableEdit* CompoundEdit::lastEdit() {
 	return undoableEditList.back();
 }
 void CompoundEdit::end() {
+	alive = false;
 	return;
 }
 bool CompoundEdit::isInProgress() {

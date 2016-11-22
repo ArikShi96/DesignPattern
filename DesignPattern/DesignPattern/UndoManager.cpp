@@ -11,10 +11,16 @@ void UndoManager::trimForLimit(int from, int to) {
 
 }
 UndoableEdit* UndoManager::editToBeUndone() {
-	return undoableEditList[indexOfNextAdd - 1];
+	if (indexOfNextAdd != -1) {
+		return undoableEditList[indexOfNextAdd];
+	}
+	return NULL;
 }
 UndoableEdit* UndoManager::editToBeRedone() {
-	return undoableEditList[indexOfNextAdd ];
+	if (indexOfNextRedo != -1) {
+		return undoableEditList[indexOfNextRedo];
+	}
+	return NULL;
 }
 
 int UndoManager::getLimit() {
@@ -33,14 +39,21 @@ void UndoManager::redoTo(UndoableEdit* edit) {
 	edit->redo();
 }
 void UndoManager::undoOrRedo() {
-	indexOfNextAdd--;
+	if (undoableEditList[indexOfNextAdd]->undo) {
+		undoableEditList[indexOfNextAdd]->undo();
+		indexOfNextAdd--;
+	}
+	if (undoableEditList[indexOfNextRedo]->canRedo()) {
+		undoableEditList[indexOfNextRedo]--;
+	}
 }
 bool UndoManager::canUndoOrRedo() {
 
 }
 void UndoManager::undoableEditHappened(UndoableEditEvent* event) {
 	undoableEditList.push_back(event->getMyEdit());
-	indexOfNextAdd ++;
+	indexOfNextAdd++;
+	indexOfNextRedo++;
 }
 string UndoManager::toString() {
 	for (int i = 0;i < undoableEditList.size();i++) {

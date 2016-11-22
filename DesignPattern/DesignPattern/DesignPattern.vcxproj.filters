@@ -31,6 +31,15 @@
     <Filter Include="源文件\command">
       <UniqueIdentifier>{b2c1c0a9-c052-4b9f-a04d-de71665c312f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\command\interface">
+      <UniqueIdentifier>{ddf3308c-dcca-4690-97f5-2d2f3524220b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\model\interface">
+      <UniqueIdentifier>{d85fc4f8-052d-4513-9cb5-544cdb98c28b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\command\interface">
+      <UniqueIdentifier>{d0e06787-125e-4291-bac3-9e9cdc0c5037}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -39,45 +48,27 @@
     <ClCompile Include="FileSystem.cpp">
       <Filter>源文件\model</Filter>
     </ClCompile>
-    <ClCompile Include="CompoundEdit.cpp">
-      <Filter>源文件\command</Filter>
-    </ClCompile>
-    <ClCompile Include="UndoManager.cpp">
-      <Filter>源文件\command</Filter>
-    </ClCompile>
     <ClCompile Include="file.cpp">
       <Filter>源文件\model</Filter>
     </ClCompile>
     <ClCompile Include="directory.cpp">
       <Filter>源文件\model</Filter>
     </ClCompile>
+    <ClCompile Include="UndoManager.cpp">
+      <Filter>源文件\command\interface</Filter>
+    </ClCompile>
+    <ClCompile Include="CompoundEdit.cpp">
+      <Filter>源文件\command\interface</Filter>
+    </ClCompile>
+    <ClCompile Include="fileOperation.cpp">
+      <Filter>源文件\command</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileSystem.h">
       <Filter>头文件\model</Filter>
     </ClInclude>
-    <ClInclude Include="CompoundEdit.h">
-      <Filter>头文件\command</Filter>
-    </ClInclude>
-    <ClInclude Include="UndoableEdit.h">
-      <Filter>头文件\command</Filter>
-    </ClInclude>
-    <ClInclude Include="UndoableEditEvent.h">
-      <Filter>头文件\command</Filter>
-    </ClInclude>
-    <ClInclude Include="UndoableEditListener.h">
-      <Filter>头文件\command</Filter>
-    </ClInclude>
-    <ClInclude Include="UndoableEditSupport.h">
-      <Filter>头文件\command</Filter>
-    </ClInclude>
-    <ClInclude Include="UndoManager.h">
-      <Filter>头文件\command</Filter>
-    </ClInclude>
     <ClInclude Include="directory.h">
-      <Filter>头文件\model</Filter>
-    </ClInclude>
-    <ClInclude Include="Entry.h">
       <Filter>头文件\model</Filter>
     </ClInclude>
     <ClInclude Include="file.h">
@@ -88,6 +79,30 @@
     </ClInclude>
     <ClInclude Include="Iobserver.h">
       <Filter>头文件\observer</Filter>
+    </ClInclude>
+    <ClInclude Include="CompoundEdit.h">
+      <Filter>头文件\command\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="UndoableEdit.h">
+      <Filter>头文件\command\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="UndoableEditEvent.h">
+      <Filter>头文件\command\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="UndoableEditListener.h">
+      <Filter>头文件\command\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="UndoableEditSupport.h">
+      <Filter>头文件\command\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="UndoManager.h">
+      <Filter>头文件\command\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Entry.h">
+      <Filter>头文件\model\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="fileOperation.h">
+      <Filter>头文件\command</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

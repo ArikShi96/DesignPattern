@@ -10,6 +10,7 @@ class file : public entry, Iobserver {
 private:
 	double size;
 	string name;
+	string content = "";
 	vector<FileSystem*> systemList;
 public:
 	file::file(double _size, string _name) {
@@ -20,6 +21,7 @@ public:
 	double getSize();
 	void printList();
 	void add(entry* en);
+	void append(string str);
 
 	void addObserver(Iobserver* observer);
 	void removeObserver(int index);

@@ -6,7 +6,7 @@ using namespace std;
 string directory::getName() {
 	return name;
 }
-int directory::getSize() {
+double directory::getSize() {
 	int size = 0;
 	for (int i = 0;i < entryList.size();i++) {
 		size += entryList[i]->getSize();

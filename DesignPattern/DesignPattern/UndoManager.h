@@ -6,7 +6,8 @@ using namespace std;
 
 class UndoManager :UndoableEditListener{
 private:
-	int indexOfNextAdd = 0;
+	int indexOfNextAdd = -1;
+	int indexOfNextRedo = -1;
 	int limit = 10;
 	vector<UndoableEdit*>undoableEditList;
 

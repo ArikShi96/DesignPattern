@@ -11,7 +11,7 @@ double file::getSize() {
 }
 
 void file::printList() {
-	cout << "name : " << name << ".txt " << "size : " << size << "\n";
+	cout << "name : " << name << "\t" << "size : " << size <<"\tcontent: "<<content<< "\n";
 }
 void file::add(entry* en) {
 	return;
@@ -27,4 +27,8 @@ void file::notifyObserver() {
 	for (int i = 0;i < systemList.size();i++) {
 		((FileSystem*)systemList[i])->update();
 	}
+}
+
+void file::append(string str) {
+	content += str;
 }

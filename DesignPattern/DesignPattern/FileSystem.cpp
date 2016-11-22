@@ -6,7 +6,9 @@ void FileSystem::update() {
 
 }
 void FileSystem::display() {
-
+	if (root != NULL) {
+		root->printList();
+	}
 }
 
 FileSystem* FileSystem::getInstance() {
@@ -14,4 +16,8 @@ FileSystem* FileSystem::getInstance() {
 		system = new FileSystem();
 	}
 	return system;
+}
+
+void FileSystem::setSize(double _size) {
+	size = _size;
 }
