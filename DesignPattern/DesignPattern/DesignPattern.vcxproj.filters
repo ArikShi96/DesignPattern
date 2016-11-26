@@ -104,5 +104,8 @@
     <ClInclude Include="fileOperation.h">
       <Filter>头文件\command</Filter>
     </ClInclude>
+    <ClInclude Include="fileOperationSupport.h">
+      <Filter>头文件\command</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

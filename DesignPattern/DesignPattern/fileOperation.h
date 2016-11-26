@@ -10,6 +10,9 @@ class fileOperation: CompoundEdit{
 private:
 	entry* en;
 public:
+	fileOperation(entry* _en) {
+		en = _en;
+	}
 	void undo();
 	void redo();
 };

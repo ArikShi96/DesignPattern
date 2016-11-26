@@ -31,4 +31,13 @@ void file::notifyObserver() {
 
 void file::append(string str) {
 	content += str;
+	tmp = str;
+	size += str.length();
+}
+
+void file::undo(string type) {
+	content = content.substr(0, content.size() - tmp.size());
+}
+void file::redo(string type) {
+	append(tmp);
 }

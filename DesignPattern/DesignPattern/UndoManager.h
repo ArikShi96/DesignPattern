@@ -1,3 +1,5 @@
+#pragma once
+
 #include<iostream>
 #include"UndoableEdit.h"
 #include"UndoableEditListener.h"
@@ -19,12 +21,12 @@ protected:
 
 public:
 	int getLimit();
-	int setLimit(int _limit);
+	void setLimit(int _limit);
 	void discardAllEdits();
 	void undoTo(UndoableEdit* edit);
 	void redoTo(UndoableEdit* edit);
 	void undoOrRedo();
 	bool canUndoOrRedo();
 	void undoableEditHappened(UndoableEditEvent* event);
-	string toString();
+	void toString();
 };

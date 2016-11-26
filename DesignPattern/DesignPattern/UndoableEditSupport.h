@@ -8,12 +8,10 @@ using namespace std;
 
 class UndoableEditSupport {
 protected:
-	int updateLevel;
 	UndoableEdit* myComEdit;
 	vector<UndoableEditListener*> editListenerList;
 public:
-	UndoableEditSupport::UndoableEditSupport(UndoableEdit* edit) {
-		myComEdit = edit;
+	UndoableEditSupport::UndoableEditSupport() {
 	}
 
 	void addUndoableListener(UndoableEditListener* listener) { editListenerList.push_back(listener); }
@@ -21,8 +19,6 @@ public:
 	void removeUndoableListener(UndoableEditListener* listener) {  };
 
 	vector<UndoableEditListener*> getEditListenerList() { return editListenerList; }
-
-	int getUpdateLevel() { return updateLevel; }
 
 	void createUndoableEdit(UndoableEdit* edit) {
 		 myComEdit = edit;

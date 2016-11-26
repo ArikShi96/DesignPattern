@@ -5,13 +5,16 @@
 using namespace std;
 
 class CompoundEdit :UndoableEdit {
+private:
+	string UndoName;
+	string RedoName;
+	string presentationName;
+
 protected:
 	bool inProgress;
 	bool hasBeenDone = true;
 	bool alive = true;
-	string UndoName;
-	string RedoName;
-	string presentationName;
+	
 	vector<UndoableEdit*> undoableEditList;
 
 public:

@@ -4,11 +4,16 @@
 #include "fileOperation.h"
 using namespace std;
 void fileOperation::undo() {
-	
-	//撤销这一步动作
-	hasBeenDone = false;
+	if (canUndo()) {
+		en->undo(getPresentationName());
+		//撤销这一步动作
+		hasBeenDone = false;
+	}
 }
 void fileOperation::redo() {
-	//redo这一步动作
-	hasBeenDone = true;
+	if (canRedo()) {
+		//redo这一步动作
+		en->redo(getPresentationName());
+		hasBeenDone = true;
+	}
 }

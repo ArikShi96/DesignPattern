@@ -156,6 +156,7 @@
     <ClInclude Include="Entry.h" />
     <ClInclude Include="file.h" />
     <ClInclude Include="fileOperation.h" />
+    <ClInclude Include="fileOperationSupport.h" />
     <ClInclude Include="FileSystem.h" />
     <ClInclude Include="Iobservable.h" />
     <ClInclude Include="Iobserver.h" />

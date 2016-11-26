@@ -10,4 +10,7 @@ public:
 	virtual double getSize() = 0;
 	virtual void add(entry* en) = 0;
 	virtual void printList() = 0;
+
+	virtual void undo(string type) = 0;
+	virtual void redo(string type) = 0;
 };

@@ -1,21 +1,25 @@
+#pragma once
+
 #include <iostream>
 #include "Iobserver.h"
-#include "entry.h"
+#include "directory.h"
+#include "UndoManager.h"
 using namespace std;
 
-class FileSystem :Iobserver {
+class FileSystem {
 private:
 	double size;	//指明文件系统现在的大小
+	UndoManager* manager;
+	directory* root;
 
-	FileSystem(){
-		size = 0;
-	}
-	static FileSystem* system;	//单例类，只允许有一个文件系统;
-	entry* root;
 public:
-	void update();
 	void display();
 
+	FileSystem() {
+		size = 0;
+		manager = new UndoManager();
+		root = new directory("root");
+	}
+	void addEntry(entry* en);
 	void setSize(double _size);
-	FileSystem* getInstance();
 };

@@ -26,7 +26,7 @@ UndoableEdit* UndoManager::editToBeRedone() {
 int UndoManager::getLimit() {
 	return limit;
 }
-int UndoManager::setLimit(int _limit) {
+void UndoManager::setLimit(int _limit) {
 	limit = _limit;
 }
 void UndoManager::discardAllEdits() {
@@ -39,7 +39,7 @@ void UndoManager::redoTo(UndoableEdit* edit) {
 	edit->redo();
 }
 void UndoManager::undoOrRedo() {
-	if (undoableEditList[indexOfNextAdd]->undo) {
+	if (undoableEditList[indexOfNextAdd]->canUndo()) {
 		undoableEditList[indexOfNextAdd]->undo();
 		indexOfNextAdd--;
 	}
@@ -48,14 +48,14 @@ void UndoManager::undoOrRedo() {
 	}
 }
 bool UndoManager::canUndoOrRedo() {
-
+	return true;
 }
 void UndoManager::undoableEditHappened(UndoableEditEvent* event) {
 	undoableEditList.push_back(event->getMyEdit());
 	indexOfNextAdd++;
 	indexOfNextRedo++;
 }
-string UndoManager::toString() {
+void UndoManager::toString() {
 	for (int i = 0;i < undoableEditList.size();i++) {
 		cout << undoableEditList[i]->getPresentationName() << "\n";
 	}

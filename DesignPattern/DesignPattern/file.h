@@ -2,19 +2,19 @@
 
 #include <iostream>
 #include "Entry.h"
-#include "Iobserver.h"
+#include "Iobservable.h"
 #include "FileSystem.h"
 using namespace std;
 
-class file : public entry, Iobserver {
+class file : public entry, Iobservable {
 private:
-	double size;
+	double size = 0;
 	string name;
 	string content = "";
+	string tmp;
 	vector<FileSystem*> systemList;
 public:
-	file::file(double _size, string _name) {
-		size = _size;
+	file::file(string _name) {
 		name = _name;
 	}
 	string getName();
@@ -26,4 +26,7 @@ public:
 	void addObserver(Iobserver* observer);
 	void removeObserver(int index);
 	void notifyObserver();
+
+	void undo(string type);
+	void redo(string type);
 };
