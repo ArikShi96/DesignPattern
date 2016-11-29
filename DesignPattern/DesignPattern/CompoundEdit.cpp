@@ -17,15 +17,8 @@ bool CompoundEdit::canUndo() {
 bool CompoundEdit::canRedo() {
 	return hasBeenDone;
 }
-bool CompoundEdit::isSignificant() {
-	return true;
-	//暂时用不到;
-}
 void CompoundEdit::addEdit(UndoableEdit* edit) {
 	undoableEditList.push_back(edit);
-}
-void CompoundEdit::repalceEdit(UndoableEdit* edit) {
-	//暂时轮空：
 }
 string CompoundEdit::getPresentationName() {
 	return presentationName;
@@ -43,7 +36,4 @@ UndoableEdit* CompoundEdit::lastEdit() {
 void CompoundEdit::end() {
 	alive = false;
 	return;
-}
-bool CompoundEdit::isInProgress() {
-	return inProgress;
 }

@@ -6,5 +6,5 @@ using namespace std;
 
 class UndoableEditListener {
 public:
-	void undoableEditHappened(UndoableEditEvent* event) {};
+	virtual void undoableEditHappened(UndoableEditEvent* event) = 0;
 };

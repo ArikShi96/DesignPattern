@@ -6,20 +6,22 @@
 #include<vector>
 using namespace std;
 
-class UndoManager :UndoableEditListener{
-private:
-	int indexOfNextAdd = -1;
-	int indexOfNextRedo = -1;
-	int limit = 10;
+class UndoManager :public UndoableEditListener{
+protected:
+	int indexOfNextAdd;
+	int indexOfNextRedo;
+	int limit;
 	vector<UndoableEdit*>undoableEditList;
 
-protected:
-	void trimForLimit();
-	void trimForLimit(int from, int to);
 	UndoableEdit* editToBeUndone();
 	UndoableEdit* editToBeRedone();
 
 public:
+	UndoManager::UndoManager() {
+		 indexOfNextAdd = 0;
+		 indexOfNextRedo = 0;
+		 limit = 10;
+	}
 	int getLimit();
 	void setLimit(int _limit);
 	void discardAllEdits();

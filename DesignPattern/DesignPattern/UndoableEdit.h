@@ -4,14 +4,12 @@ using namespace std;
 
 class UndoableEdit {
 public:
-	virtual void undo() {};
-	virtual void redo() {};
-	virtual bool canUndo() {};
-	virtual bool canRedo() {};
-	virtual bool isSignificant() {};
-	virtual void addEdit(UndoableEdit* edit) {};
-	virtual void repalceEdit(UndoableEdit* edit) {};
-	virtual string getPresentationName() {};
-	virtual string getUndoPresentationName() {};
-	virtual string getRedoPresentationName() {};
+	virtual void undo() = 0;
+	virtual void redo() = 0;
+	virtual bool canUndo() = 0;
+	virtual bool canRedo() = 0;
+	virtual void addEdit(UndoableEdit* edit) = 0;
+	virtual string getPresentationName() = 0;
+	virtual string getUndoPresentationName() = 0;
+	virtual string getRedoPresentationName() = 0;
 };

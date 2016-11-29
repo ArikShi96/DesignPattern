@@ -13,99 +13,90 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="头文件\model">
-      <UniqueIdentifier>{e2a4f0b5-9d5d-4a91-a866-c5a0f4f5c69a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="头文件\command">
-      <UniqueIdentifier>{a37b27a4-f32a-4811-b605-f6e6d2fb2783}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\main">
-      <UniqueIdentifier>{32008260-e617-4d96-b066-10cf4205d4ad}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\model">
-      <UniqueIdentifier>{f47c6c24-93f5-4d74-9321-3c4c2bf9c306}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="头文件\observer">
-      <UniqueIdentifier>{56097889-0a0f-40d9-9994-2aff9af293af}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\command">
-      <UniqueIdentifier>{b2c1c0a9-c052-4b9f-a04d-de71665c312f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="头文件\command\interface">
+    <Filter Include="头文件\interface">
       <UniqueIdentifier>{ddf3308c-dcca-4690-97f5-2d2f3524220b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\model\interface">
+    <Filter Include="头文件\interface\command">
+      <UniqueIdentifier>{014c9bf2-3173-4c44-933a-eb729371aa4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\interface\model">
       <UniqueIdentifier>{d85fc4f8-052d-4513-9cb5-544cdb98c28b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\command\interface">
+    <Filter Include="头文件\interface\observer">
+      <UniqueIdentifier>{56097889-0a0f-40d9-9994-2aff9af293af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\interface">
       <UniqueIdentifier>{d0e06787-125e-4291-bac3-9e9cdc0c5037}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>源文件\main</Filter>
-    </ClCompile>
-    <ClCompile Include="FileSystem.cpp">
-      <Filter>源文件\model</Filter>
-    </ClCompile>
-    <ClCompile Include="file.cpp">
-      <Filter>源文件\model</Filter>
-    </ClCompile>
-    <ClCompile Include="directory.cpp">
-      <Filter>源文件\model</Filter>
-    </ClCompile>
     <ClCompile Include="UndoManager.cpp">
-      <Filter>源文件\command\interface</Filter>
+      <Filter>源文件\interface</Filter>
     </ClCompile>
     <ClCompile Include="CompoundEdit.cpp">
-      <Filter>源文件\command\interface</Filter>
+      <Filter>源文件\interface</Filter>
     </ClCompile>
-    <ClCompile Include="fileOperation.cpp">
-      <Filter>源文件\command</Filter>
+    <ClCompile Include="FileSystem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="file.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="directory.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="fileEdit.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FileSystem.h">
-      <Filter>头文件\model</Filter>
-    </ClInclude>
-    <ClInclude Include="directory.h">
-      <Filter>头文件\model</Filter>
-    </ClInclude>
-    <ClInclude Include="file.h">
-      <Filter>头文件\model</Filter>
-    </ClInclude>
     <ClInclude Include="Iobservable.h">
-      <Filter>头文件\observer</Filter>
+      <Filter>头文件\interface\observer</Filter>
     </ClInclude>
     <ClInclude Include="Iobserver.h">
-      <Filter>头文件\observer</Filter>
-    </ClInclude>
-    <ClInclude Include="CompoundEdit.h">
-      <Filter>头文件\command\interface</Filter>
-    </ClInclude>
-    <ClInclude Include="UndoableEdit.h">
-      <Filter>头文件\command\interface</Filter>
-    </ClInclude>
-    <ClInclude Include="UndoableEditEvent.h">
-      <Filter>头文件\command\interface</Filter>
-    </ClInclude>
-    <ClInclude Include="UndoableEditListener.h">
-      <Filter>头文件\command\interface</Filter>
-    </ClInclude>
-    <ClInclude Include="UndoableEditSupport.h">
-      <Filter>头文件\command\interface</Filter>
-    </ClInclude>
-    <ClInclude Include="UndoManager.h">
-      <Filter>头文件\command\interface</Filter>
+      <Filter>头文件\interface\observer</Filter>
     </ClInclude>
     <ClInclude Include="Entry.h">
-      <Filter>头文件\model\interface</Filter>
+      <Filter>头文件\interface\model</Filter>
     </ClInclude>
-    <ClInclude Include="fileOperation.h">
-      <Filter>头文件\command</Filter>
+    <ClInclude Include="UndoManager.h">
+      <Filter>头文件\interface\command</Filter>
     </ClInclude>
-    <ClInclude Include="fileOperationSupport.h">
-      <Filter>头文件\command</Filter>
+    <ClInclude Include="UndoableEditSupport.h">
+      <Filter>头文件\interface\command</Filter>
+    </ClInclude>
+    <ClInclude Include="UndoableEditListener.h">
+      <Filter>头文件\interface\command</Filter>
+    </ClInclude>
+    <ClInclude Include="UndoableEditEvent.h">
+      <Filter>头文件\interface\command</Filter>
+    </ClInclude>
+    <ClInclude Include="UndoableEdit.h">
+      <Filter>头文件\interface\command</Filter>
+    </ClInclude>
+    <ClInclude Include="CompoundEdit.h">
+      <Filter>头文件\interface\command</Filter>
+    </ClInclude>
+    <ClInclude Include="file.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="directory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="fileEdit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="fileEditManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="fileEditSupport.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

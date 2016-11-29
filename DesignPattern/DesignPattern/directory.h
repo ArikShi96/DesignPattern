@@ -19,6 +19,6 @@ public:
 	void remove();
 	void printList();
 
-	void undo(string type);
-	void redo(string type);
+	void undo(string type,int index);
+	void redo(string type,int index);
 };

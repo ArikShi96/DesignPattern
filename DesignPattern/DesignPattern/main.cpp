@@ -3,8 +3,8 @@
 #include <vector>
 #include "file.h"
 #include "directory.h"
-#include "fileOperation.h"
 #include "CompoundEdit.h"
+#include "UndoableEditSupport.h"
 
 using namespace std;
 
@@ -14,7 +14,6 @@ int main()
 	cout << "                                   姓名：施峰" << "\n";
 	cout << "                                   学号：1452792" << "\n";
 
-
 	FileSystem* system = new FileSystem();
 	//1.添加文件夹与文件
 	entry* en1 = new directory("aaa");
@@ -23,6 +22,4 @@ int main()
 	system->addEntry(en2);
 	entry* en3 = new file("cc");
 	system->addEntry(en3);
-
-
 }

@@ -11,6 +11,6 @@ public:
 	virtual void add(entry* en) = 0;
 	virtual void printList() = 0;
 
-	virtual void undo(string type) = 0;
-	virtual void redo(string type) = 0;
+	virtual void undo(string type,int index) = 0;
+	virtual void redo(string type,int index) = 0;
 };

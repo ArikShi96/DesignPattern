@@ -25,7 +25,7 @@ void file::removeObserver(int index) {
 }
 void file::notifyObserver() {
 	for (int i = 0;i < systemList.size();i++) {
-		((FileSystem*)systemList[i])->update();
+	
 	}
 }
 

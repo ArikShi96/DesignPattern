@@ -12,11 +12,11 @@ protected:
 	vector<UndoableEditListener*> editListenerList;
 public:
 	UndoableEditSupport::UndoableEditSupport() {
+		cout << "hello"<<endl;
 	}
-
 	void addUndoableListener(UndoableEditListener* listener) { editListenerList.push_back(listener); }
 
-	void removeUndoableListener(UndoableEditListener* listener) {  };
+	void removeUndoableListener(int index) { editListenerList.erase(editListenerList.begin() + index);};
 
 	vector<UndoableEditListener*> getEditListenerList() { return editListenerList; }
 
@@ -29,5 +29,6 @@ public:
 		for (int i = 0; i < editListenerList.size();i++) {
 			editListenerList[i]->undoableEditHappened(new UndoableEditEvent(myComEdit));
 		}
+		cout << "noadd" << endl;
 	}
 };

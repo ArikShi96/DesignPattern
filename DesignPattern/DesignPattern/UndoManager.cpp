@@ -4,12 +4,6 @@
 #include<string>
 using namespace std;
 
-void UndoManager::trimForLimit() {
-
-}
-void UndoManager::trimForLimit(int from, int to) {
-
-}
 UndoableEdit* UndoManager::editToBeUndone() {
 	if (indexOfNextAdd != -1) {
 		return undoableEditList[indexOfNextAdd];
