@@ -2,23 +2,31 @@
 #include"Entry.h"
 #include<vector>
 #include<string>
+#include<stack>
 using namespace std;
 
 class directory :public entry {
 private:
 	string name;
+	directory* father;
 	vector<entry*> entryList;
-	entry* tmp;
+	stack<entry*> cache;	//缓冲区，用来暂时保存被删除的文件或文件夹
 public:
-	directory::directory(string _name) {
+	directory::directory(string _name, directory* _father) {
 		name = _name;
+		father = _father;
 	}
 	string getName();
 	double getSize();
-	void add(entry* en);
-	void remove();
+	void add(entry* en, int index);
+	void remove(int index);
 	void printList();
+	entry* getFatherDir();
+	entry* getEntryByName(string name);
+	string getType() { return "dir"; }
 
-	void undo(string type,int index);
-	void redo(string type,int index);
+	string removeEntryByNmae(string name);
+
+	void undo(string type, int index);
+	void redo(string type, int index);
 };

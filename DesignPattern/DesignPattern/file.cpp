@@ -11,33 +11,29 @@ double file::getSize() {
 }
 
 void file::printList() {
-	cout << "name : " << name << "\t" << "size : " << size <<"\tcontent: "<<content<< "\n";
+	cout << "  name : " << name << "\t" << "size : " << size << "\n";
 }
-void file::add(entry* en) {
+void file::add(entry* en,int index) {
 	return;
 }
 
-void file::addObserver(Iobserver* observer) {
-	systemList.push_back((FileSystem*)observer);
+void file::append(string str) {
+	cache.push(content);
+	content += str;
+	size += str.size();
 }
-void file::removeObserver(int index) {
-	systemList.erase(systemList.begin() + index);
-}
-void file::notifyObserver() {
-	for (int i = 0;i < systemList.size();i++) {
-	
+
+void file::undo(string type,int index) {
+	if (type == "append") {
+		content = cache.top();
+		size = content.size();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+		cache.pop();
 	}
 }
-
-void file::append(string str) {
-	content += str;
-	tmp = str;
-	size += str.length();
+void file::redo(string type,int index) {
+	
 }
 
-void file::undo(string type) {
-	content = content.substr(0, content.size() - tmp.size());
-}
-void file::redo(string type) {
-	append(tmp);
+entry* file::getFatherDir() {
+	return father;
 }

@@ -11,24 +11,20 @@ protected:
 	string presentationName;
 
 	bool hasBeenDone;
-	bool alive;
-	
-	vector<UndoableEdit*> undoableEditList;
 
 public:
 	CompoundEdit::CompoundEdit() {
 		hasBeenDone = true;
-		alive = true;
+	}
+	CompoundEdit::CompoundEdit(string _name) {
+		hasBeenDone = true;
+		presentationName = _name;
 	}
 	void undo();
 	void redo();
 	bool canUndo();
 	bool canRedo();
-	void addEdit(UndoableEdit* edit);
 	string getPresentationName();
 	string getUndoPresentationName();
 	string getRedoPresentationName();
-
-	UndoableEdit* lastEdit();
-	void end();
 };

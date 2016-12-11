@@ -12,7 +12,7 @@ UndoableEdit* UndoManager::editToBeUndone() {
 }
 UndoableEdit* UndoManager::editToBeRedone() {
 	if (indexOfNextRedo != -1) {
-		return undoableEditList[indexOfNextRedo];
+		return undoableEditList[indexOfNextAdd + 1];
 	}
 	return NULL;
 }
@@ -25,12 +25,22 @@ void UndoManager::setLimit(int _limit) {
 }
 void UndoManager::discardAllEdits() {
 	undoableEditList.clear();
+	indexOfNextAdd = -1;
+	indexOfNextRedo = -1;
 }
-void UndoManager::undoTo(UndoableEdit* edit) {
-	edit->undo();
+void UndoManager::undoAll() {
+	while (indexOfNextAdd > -1) {
+		undoableEditList[indexOfNextAdd--]->undo();
+	}
 }
-void UndoManager::redoTo(UndoableEdit* edit) {
-	edit->redo();
+void UndoManager::redoAll() {
+	if (indexOfNextAdd == indexOfNextRedo) {
+		return;
+	}
+	for (int i = 0;i < undoableEditList.size();i++) {
+		undoableEditList[i]->redo();
+		indexOfNextAdd++;
+	}
 }
 void UndoManager::undoOrRedo() {
 	if (undoableEditList[indexOfNextAdd]->canUndo()) {
@@ -38,17 +48,45 @@ void UndoManager::undoOrRedo() {
 		indexOfNextAdd--;
 	}
 	if (undoableEditList[indexOfNextRedo]->canRedo()) {
-		undoableEditList[indexOfNextRedo]--;
+		undoableEditList[indexOfNextRedo]->redo();
+		indexOfNextAdd++;
 	}
 }
 bool UndoManager::canUndoOrRedo() {
-	return true;
+	return !undoableEditList.empty();
 }
 void UndoManager::undoableEditHappened(UndoableEditEvent* event) {
+	if (indexOfNextAdd > limit)return;
+	//undo之后再执行新的动作，会将undo到的动作之后的所有动作覆盖掉,也就是不能再redo了;
+	int size = undoableEditList.size();
+	if (indexOfNextAdd != size - 1) {
+		int count = size - indexOfNextAdd - 1;
+		while (count) {
+			undoableEditList.pop_back();
+			count--;
+		}
+	}
 	undoableEditList.push_back(event->getMyEdit());
 	indexOfNextAdd++;
-	indexOfNextRedo++;
+	indexOfNextRedo = indexOfNextAdd;
 }
+
+void UndoManager::undoLast() {
+	if (editToBeUndone()->canUndo()) {
+		editToBeUndone()->undo();
+		indexOfNextAdd--;
+	}
+}
+void UndoManager::redoLast() {
+	if (indexOfNextAdd == indexOfNextRedo) {
+		return;
+	}
+	if (editToBeRedone()->canRedo()) {
+		editToBeRedone()->redo();
+		indexOfNextAdd++;
+	}
+}
+
 void UndoManager::toString() {
 	for (int i = 0;i < undoableEditList.size();i++) {
 		cout << undoableEditList[i]->getPresentationName() << "\n";

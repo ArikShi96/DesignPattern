@@ -1,5 +1,7 @@
 ﻿  FileSystem.cpp
-f:\sourcetree_projects\designpattern\designpattern\undoableeditsupport.h(29): warning C4018: “<”: 有符号/无符号不匹配
-f:\sourcetree_projects\designpattern\designpattern\fileeditsupport.h(15): warning C4018: “<”: 有符号/无符号不匹配
+f:\sourcetree_projects\designpattern\designpattern\fileeditmanager.h(23): warning C4018: “<”: 有符号/无符号不匹配
+f:\sourcetree_projects\designpattern\designpattern\fileeditmanager.h(29): warning C4018: “<”: 有符号/无符号不匹配
+f:\sourcetree_projects\designpattern\designpattern\undoableeditsupport.h(28): warning C4018: “<”: 有符号/无符号不匹配
+f:\sourcetree_projects\designpattern\designpattern\fileeditsupport.h(14): warning C4018: “<”: 有符号/无符号不匹配
   DesignPattern.vcxproj -> F:\sourcetree_projects\DesignPattern\Debug\DesignPattern.exe
   DesignPattern.vcxproj -> F:\sourcetree_projects\DesignPattern\Debug\DesignPattern.pdb (Full PDB)

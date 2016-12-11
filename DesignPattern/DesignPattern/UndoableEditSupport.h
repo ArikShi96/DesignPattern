@@ -11,9 +11,8 @@ protected:
 	UndoableEdit* myComEdit;
 	vector<UndoableEditListener*> editListenerList;
 public:
-	UndoableEditSupport::UndoableEditSupport() {
-		cout << "hello"<<endl;
-	}
+	UndoableEditSupport::UndoableEditSupport() {}
+
 	void addUndoableListener(UndoableEditListener* listener) { editListenerList.push_back(listener); }
 
 	void removeUndoableListener(int index) { editListenerList.erase(editListenerList.begin() + index);};
@@ -29,6 +28,5 @@ public:
 		for (int i = 0; i < editListenerList.size();i++) {
 			editListenerList[i]->undoableEditHappened(new UndoableEditEvent(myComEdit));
 		}
-		cout << "noadd" << endl;
 	}
 };

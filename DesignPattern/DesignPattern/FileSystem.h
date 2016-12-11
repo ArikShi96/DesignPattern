@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Iobserver.h"
 #include "directory.h"
+#include "file.h"
 #include "fileEditManager.h"
 #include "fileEditSupport.h"
 #include "fileEdit.h"
@@ -10,26 +11,41 @@ using namespace std;
 
 class FileSystem {
 private:
-	double size;	//指明文件系统现在的大小
-	directory* root;
-	fileEditManager* manager;
-	fileEditSupport* support;
-	fileEdit* edit;		//单次执行
+	double size;		//指明文件系统现在的大小
+	directory* root;	//根目录
+	entry* curr;	//现在的目录
+	UndoManager* manager;
+	UndoableEditSupport* support;
 	int index = 0;
+	int redoTmp = 0;
 public:
-	
-	void display();
 
 	FileSystem::FileSystem() {
 		size = 0;
-		root = new directory("root");
-		manager = new fileEditManager();
-		support = new fileEditSupport();
-		edit = new fileEdit();
+		root = new directory("root",NULL);
+		curr = root;
+		manager = new UndoManager();
+		support = new UndoableEditSupport();
 		support->addUndoableListener((UndoableEditListener*)manager);
 	}
-	void addEntry(entry* en);
+	void display();
+	double setSize(double _size);
+	void addEntry(entry* en, int _index);
 	void rmvEntry(int _index);
 	void save();
-	void setSize(double _size);
+	void undoOneStep();
+	void undoAll();
+	void redoOneStep();
+	void redoAll();
+
+	void help();
+
+	void console();
+
+	~FileSystem() {
+		delete(root);
+		delete(curr);
+		delete(manager);
+		delete(support);
+	}
 };
