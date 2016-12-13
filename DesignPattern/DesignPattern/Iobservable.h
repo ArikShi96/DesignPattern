@@ -4,12 +4,13 @@
 */
 #include <iostream>
 #include "Iobserver.h"
+#include "Object.h"
 using namespace std;
 
-class Iobservable {
+class Iobservable:public Object {
 
 public:
-	virtual void addObserver(Iobserver* observer) = 0;
+	virtual void addObserver(Object* observer) = 0;
 	virtual void removeObserver(int index) = 0;
-	virtual void notifyObserver() = 0;
+	virtual void notifyObserver(Object* object) = 0;
 };

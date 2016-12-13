@@ -21,10 +21,14 @@ void directory::remove(int index) {
 	cache.push(entryList[index]);
 	entryList.erase(entryList.begin() + index);
 }
-void directory::printList() {
-	cout << "dir : " << name << endl;
+void directory::printList(int level) {
+	for (int i = 0;i < level;i++) {
+		cout << "-";
+	}
+	level++;
+	cout << name << endl;
 	for (int i = 0;i < entryList.size();i++) {
-		entryList[i]->printList();
+		entryList[i]->printList(level);
 	}
 }
 
@@ -69,12 +73,11 @@ entry* directory::getEntryByName(string name) {
 	return NULL;
 }
 
-string directory::removeEntryByNmae(string name) {
+int directory::removeEntryByNmae(string name) {
 	for (int i = 0;i < entryList.size();i++) {
 		if (entryList[i]->getName() == name) {
-			entryList.erase(entryList.begin() + i);
-			return "成功删除!!!";
+			return i;
 		}
 	}
-	return "输入的文件或文件夹不存在!!!";
+	return -1;
 }

@@ -1,8 +1,9 @@
 #pragma once
 #include<iostream>
+#include "Object.h"
 using namespace std;
 
-class UndoableEdit {
+class UndoableEdit :public Object {
 public:
 	virtual void undo() = 0;
 	virtual void redo() = 0;

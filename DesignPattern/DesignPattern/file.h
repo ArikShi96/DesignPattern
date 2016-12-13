@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include<stack>
+#include<vector>
 #include "Entry.h"
 #include "Iobservable.h"
 #include "FileSystem.h"
@@ -9,20 +9,22 @@ using namespace std;
 
 class file : public entry {
 private:
+	int content_index = 0;
 	double size = 0;
 	string name;
 	string content = "";
 	string tmp;
-	stack<string> cache;
+	vector<string> cache;
 	directory* father;
 public:
 	file::file(string _name,directory* _father) {
 		name = _name;
 		father = _father;
+		cache.push_back(content);
 	}
 	string getName();
 	double getSize();
-	void printList();
+	void printList(int level);
 	void add(entry* en,int index);
 	void append(string str);
 	entry* getFatherDir();

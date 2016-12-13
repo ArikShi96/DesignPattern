@@ -68,9 +68,6 @@
     <ClInclude Include="UndoableEditSupport.h">
       <Filter>头文件\interface\command</Filter>
     </ClInclude>
-    <ClInclude Include="UndoableEditListener.h">
-      <Filter>头文件\interface\command</Filter>
-    </ClInclude>
     <ClInclude Include="UndoableEditEvent.h">
       <Filter>头文件\interface\command</Filter>
     </ClInclude>
@@ -92,15 +89,13 @@
     <ClInclude Include="fileEdit.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="fileEditManager.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="fileEditSupport.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="Object.h">
+      <Filter>头文件\interface\model</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
 </Project>

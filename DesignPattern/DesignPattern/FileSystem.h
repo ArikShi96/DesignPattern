@@ -4,9 +4,9 @@
 #include "Iobserver.h"
 #include "directory.h"
 #include "file.h"
-#include "fileEditManager.h"
-#include "fileEditSupport.h"
 #include "fileEdit.h"
+#include "UndoManager.h"
+#include "UndoableEditSupport.h"
 using namespace std;
 
 class FileSystem {
@@ -26,7 +26,7 @@ public:
 		curr = root;
 		manager = new UndoManager();
 		support = new UndoableEditSupport();
-		support->addUndoableListener((UndoableEditListener*)manager);
+		support->addObserver((Object*)manager);
 	}
 	void display();
 	double setSize(double _size);

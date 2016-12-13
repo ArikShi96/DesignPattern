@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="directory" Collapsed="true">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAGAIAQAAAEAAEIAAAAAQAFAAEAAAIEAAACAAA=</HashCode>
+      <FileName>directory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="file" Collapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAAAUAICAAAAAAIEAAAAAAQAFAAEABAMEAAACAAA=</HashCode>
+      <FileName>file.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fileEdit" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEGAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>fileEdit.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSystem" Collapsed="true">
+    <Position X="6" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAiAgAiAAAgAAIAgCAQEAAMAABAAAAAIAAABAJA=</HashCode>
+      <FileName>FileSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CompoundEdit" Collapsed="true">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAMABCEAAAAACAAAAEAAAAAAAAAgAAAARAAAAIAAAA=</HashCode>
+      <FileName>CompoundEdit.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UndoableEdit" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAMAACEAAAAACAAAAEAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>UndoableEdit.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UndoableEditEvent" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAgAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>UndoableEditEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UndoableEditSupport" Collapsed="true">
+    <Position X="11.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAIBAAQAAAAAAAAAAAAAAEAAAACAAAAAA=</HashCode>
+      <FileName>UndoableEditSupport.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UndoManager" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAkAAggAGAhAAAAAABAABAAAAAMAAASAAAEAAAAEABA=</HashCode>
+      <FileName>UndoManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="entry" Collapsed="true">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAIAAAAAAAAEAAAAAAQAEAAAAAAIEAAACAAA=</HashCode>
+      <FileName>Entry.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Object" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Object.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Iobservable" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAQAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Iobservable.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Iobserver" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Iobserver.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

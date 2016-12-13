@@ -2,11 +2,12 @@
 
 #include<iostream>
 #include"UndoableEdit.h"
-#include"UndoableEditListener.h"
 #include<vector>
+#include "Iobserver.h"
+#include "UndoableEditEvent.h"
 using namespace std;
 
-class UndoManager :public UndoableEditListener{
+class UndoManager :public Iobserver{
 protected:
 	int indexOfNextAdd;
 	int indexOfNextRedo;
@@ -20,7 +21,7 @@ public:
 	UndoManager::UndoManager() {
 		indexOfNextAdd = -1;
 		indexOfNextRedo = -1;
-		limit = 0;
+		limit = 10;
 	}
 	UndoManager::UndoManager(int _limit) {
 		 indexOfNextAdd = -1;
@@ -38,5 +39,6 @@ public:
 	void undoOrRedo();
 	bool canUndoOrRedo();
 	void undoableEditHappened(UndoableEditEvent* event);
+	void update(Object* object);
 	void toString();
 };

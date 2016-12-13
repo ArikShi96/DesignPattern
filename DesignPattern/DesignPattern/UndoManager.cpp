@@ -55,6 +55,11 @@ void UndoManager::undoOrRedo() {
 bool UndoManager::canUndoOrRedo() {
 	return !undoableEditList.empty();
 }
+
+void UndoManager::update(Object* object) {
+	undoableEditHappened(new UndoableEditEvent((UndoableEdit*)object));
+}
+
 void UndoManager::undoableEditHappened(UndoableEditEvent* event) {
 	if (indexOfNextAdd > limit)return;
 	//undo之后再执行新的动作，会将undo到的动作之后的所有动作覆盖掉,也就是不能再redo了;
@@ -72,18 +77,24 @@ void UndoManager::undoableEditHappened(UndoableEditEvent* event) {
 }
 
 void UndoManager::undoLast() {
-	if (editToBeUndone()->canUndo()) {
-		editToBeUndone()->undo();
-		indexOfNextAdd--;
+	UndoableEdit* edit = editToBeUndone();
+	if (edit != NULL) {
+		if (edit->canUndo()) {
+			edit->undo();
+			indexOfNextAdd--;
+		}
 	}
 }
 void UndoManager::redoLast() {
 	if (indexOfNextAdd == indexOfNextRedo) {
 		return;
 	}
-	if (editToBeRedone()->canRedo()) {
-		editToBeRedone()->redo();
-		indexOfNextAdd++;
+	UndoableEdit* edit = editToBeRedone();
+	if (edit != NULL) {
+		if (edit->canRedo()) {
+			edit->redo();
+			indexOfNextAdd++;
+		}
 	}
 }
 

@@ -2,7 +2,7 @@
 #include<iostream>
 #include"UndoableEdit.h"
 
-class UndoableEditEvent {
+class UndoableEditEvent :public Object {
 private:
 	UndoableEdit* Edit;
 public:

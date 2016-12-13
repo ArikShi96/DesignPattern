@@ -2,31 +2,28 @@
 #include <iostream>
 #include <vector>
 #include "CompoundEdit.h"
-#include "UndoableEditListener.h"
+#include "Iobserver.h"
 
 using namespace std;
 
-class UndoableEditSupport {
+class UndoableEditSupport :public Iobservable {
 protected:
-	UndoableEdit* myComEdit;
-	vector<UndoableEditListener*> editListenerList;
+	vector<Iobserver*> editListenerList;
 public:
 	UndoableEditSupport::UndoableEditSupport() {}
 
-	void addUndoableListener(UndoableEditListener* listener) { editListenerList.push_back(listener); }
+	vector<Iobserver*> getEditListenerList() { return editListenerList; }
 
-	void removeUndoableListener(int index) { editListenerList.erase(editListenerList.begin() + index);};
-
-	vector<UndoableEditListener*> getEditListenerList() { return editListenerList; }
-
-	void createUndoableEdit(UndoableEdit* edit) {
-		 myComEdit = edit;
-		 postEdit();
+	void addObserver(Object* observer) {
+		editListenerList.push_back((Iobserver*)observer);
+	}
+	void removeObserver(int index) {
+		editListenerList.erase(editListenerList.begin() + index);
 	}
 
-	void postEdit() {
+	void notifyObserver(Object* object) {
 		for (int i = 0; i < editListenerList.size();i++) {
-			editListenerList[i]->undoableEditHappened(new UndoableEditEvent(myComEdit));
+			editListenerList[i]->update(object);
 		}
 	}
 };

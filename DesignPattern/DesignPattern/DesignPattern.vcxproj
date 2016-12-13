@@ -156,20 +156,19 @@
     <ClInclude Include="Entry.h" />
     <ClInclude Include="file.h" />
     <ClInclude Include="fileEdit.h" />
-    <ClInclude Include="fileEditManager.h" />
-    <ClInclude Include="fileEditSupport.h" />
     <ClInclude Include="FileSystem.h" />
     <ClInclude Include="Iobservable.h" />
     <ClInclude Include="Iobserver.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="UndoableEdit.h" />
     <ClInclude Include="UndoableEditEvent.h" />
-    <ClInclude Include="UndoableEditListener.h" />
     <ClInclude Include="UndoableEditSupport.h" />
     <ClInclude Include="UndoManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

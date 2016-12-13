@@ -4,7 +4,7 @@ using namespace std;
 
 
 void FileSystem::display() {
-	curr->printList();
+	curr->printList(0);
 }
 double FileSystem::setSize(double _size) {
 	return curr->getSize();
@@ -13,13 +13,13 @@ double FileSystem::setSize(double _size) {
 void FileSystem::addEntry(entry* en, int _index) {
 	curr->add(en, _index);
 	fileEdit* newEdit = new fileEdit(curr, "add", _index);
-	support->createUndoableEdit(newEdit);
+	support->notifyObserver(newEdit);
 }
 
 void FileSystem::rmvEntry(int _index) {
 	((directory*)curr)->remove(_index);
 	fileEdit* newEdit = new fileEdit(curr, "remove", _index);
-	support->createUndoableEdit(newEdit);
+	support->notifyObserver(newEdit);
 }
 void FileSystem::save() {
 	manager->discardAllEdits();
@@ -48,6 +48,7 @@ void FileSystem::help() {
 		<< "\t\t\t\tcd\t\t\t切换目录\t\t\t" << "\n"
 		<< "\t\t\t\trmdir\t\t\t删除目录及以下所有文件\t\t\t" << "\n"
 		<< "\t\t\t\ttouch\t\t\t创建空文件\t\t\t" << "\n"
+		<< "\t\t\t\tappend\t\t\t添加文件内容\t\t\t" << "\n"
 		<< "\t\t\t\tcat\t\t\t查看文件内容\t\t\t" << "\n"
 		<< "\t\t\t\trm\t\t\t删除文件\t\t\t" << "\n"
 		<< "\t\t\t\tundo\t\t\t撤销一步动作\t\t\t" << "\n"
@@ -98,6 +99,11 @@ void FileSystem::console() {
 			addEntry(new file(name + ".txt", (directory*)curr), index++);
 			redoTmp = index;
 		}
+		if (cmd == "append" && curr->getType() == "file") {
+			string content;
+			cout << "输入你要添加的内容 ： ";cin >> content;
+			((file*)curr)->append(content);
+		}
 		if (cmd == "cat" && curr->getType() == "file") {
 			((file*)curr)->printContent();
 		}
@@ -110,11 +116,35 @@ void FileSystem::console() {
 		if (cmd == "rmdir"&& curr->getType() == "dir") {
 			string name;
 			cout << "输入要删除的文件夹名字 : ";cin >> name;
-			cout << ((directory*)curr)->removeEntryByNmae(name) << "\n";
+			int rm_index = ((directory*)curr)->removeEntryByNmae(name);
+			if (rm_index == -1) {
+				cout << "输入的文件或文件夹不存在 !!!" << endl;
+			}
+			else{
+				rmvEntry(rm_index);
+				index--;
+				cout << "成功删除 !!!"<< "\n";
+			}
 		}
-		if (cmd == "redo") { redoOneStep();index++; }
+		if (cmd == "redo") { 
+			if (curr->getType() == "dir") {
+				redoOneStep();
+				index++;
+			}
+			else{
+				((file*)curr)->redo("append", 0);
+			}
+		}
 		if (cmd == "redo_all") { redoAll();index = redoTmp; }
-		if (cmd == "undo") { undoOneStep();index--; }
+		if (cmd == "undo") {
+			if (curr->getType() == "dir") {
+				undoOneStep();
+				index--;
+			}
+			else {
+				((file*)curr)->undo("append", 0);
+			}
+		}
 		if (cmd == "undo_all") { undoAll();index = 0; }
 		if (cmd == "save") { save(); }
 		if (cmd == "quit") { exit(0); }

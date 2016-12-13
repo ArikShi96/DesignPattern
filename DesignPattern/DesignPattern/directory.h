@@ -20,12 +20,12 @@ public:
 	double getSize();
 	void add(entry* en, int index);
 	void remove(int index);
-	void printList();
+	void printList(int level);
 	entry* getFatherDir();
 	entry* getEntryByName(string name);
 	string getType() { return "dir"; }
 
-	string removeEntryByNmae(string name);
+	int removeEntryByNmae(string name);
 
 	void undo(string type, int index);
 	void redo(string type, int index);
