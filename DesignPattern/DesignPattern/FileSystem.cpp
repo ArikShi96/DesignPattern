@@ -67,6 +67,9 @@ void FileSystem::console() {
 		if (cmd == "ls"  && curr->getType() == "dir") {
 			this->display();
 		}
+		if (cmd == "pwd" ) {
+			root->printList(0);
+		}
 		if (cmd == "mkdir" && curr->getType() == "dir") {
 			string name;
 			cout << "输入新文件夹名字： ";cin >> name;

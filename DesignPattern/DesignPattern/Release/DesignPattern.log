@@ -1,0 +1,23 @@
+﻿  CompoundEdit.cpp
+  directory.cpp
+f:\sourcetree_projects\designpattern\designpattern\UndoableEditSupport.h(25): warning C4018: “<”: 有符号/无符号不匹配
+directory.cpp(11): warning C4018: “<”: 有符号/无符号不匹配
+directory.cpp(30): warning C4018: “<”: 有符号/无符号不匹配
+directory.cpp(68): warning C4018: “<”: 有符号/无符号不匹配
+directory.cpp(77): warning C4018: “<”: 有符号/无符号不匹配
+  file.cpp
+f:\sourcetree_projects\designpattern\designpattern\UndoableEditSupport.h(25): warning C4018: “<”: 有符号/无符号不匹配
+file.cpp(39): warning C4018: “<”: 有符号/无符号不匹配
+  fileEdit.cpp
+  FileSystem.cpp
+f:\sourcetree_projects\designpattern\designpattern\UndoableEditSupport.h(25): warning C4018: “<”: 有符号/无符号不匹配
+  main.cpp
+f:\sourcetree_projects\designpattern\designpattern\UndoableEditSupport.h(25): warning C4018: “<”: 有符号/无符号不匹配
+  UndoManager.cpp
+UndoManager.cpp(40): warning C4018: “<”: 有符号/无符号不匹配
+UndoManager.cpp(102): warning C4018: “<”: 有符号/无符号不匹配
+  正在生成代码
+  All 597 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  DesignPattern.vcxproj -> F:\sourcetree_projects\DesignPattern\Release\DesignPattern.exe
+  DesignPattern.vcxproj -> F:\sourcetree_projects\DesignPattern\Release\DesignPattern.pdb (Full PDB)
